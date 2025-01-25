@@ -117,13 +117,21 @@ const PricingCard = ({
   return (
     <Card
       sx={{
-        width: 280,
+        width: {
+          xs: "25.9rem",
+          // sm: 576,
+          md: "35.2rem",
+        },
+        height: {
+          xs: "28.8rem",
+          // sm: 576,
+          md: "32.3rem",
+        },
         borderRadius: "24px",
         bgcolor: "#A9EDEE",
         position: "relative",
-        minHeight: 280,
         overflow: "visible",
-        padding: "0.5rem",
+        padding: "3.2rem",
       }}
     >
       <Box
@@ -137,7 +145,7 @@ const PricingCard = ({
       >
         {SpecialOfferIcon}
       </Box>
-      <CardContent>
+      <Box>
         <Box
           sx={{
             position: "absolute",
@@ -236,7 +244,7 @@ const PricingCard = ({
             خرید محصول
           </Button>
         </Box>
-      </CardContent>
+      </Box>
     </Card>
   );
 };

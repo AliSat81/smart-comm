@@ -1,0 +1,125 @@
+.embla {
+  margin: auto;
+  --slide-height: 19rem;
+  --slide-spacing: 3.2rem;
+  --slide-size: 100%;
+  --slide-spacing-sm: 1.6rem;
+  --slide-size-sm: 50%;
+  --slide-spacing-lg: 2rem;
+  --slide-size-lg: calc(100% / 3);
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container {
+  backface-visibility: hidden;
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+@media (min-width: 768px) {
+  .embla__container {
+    margin-left: calc(var(--slide-spacing-sm) * -1);
+  }
+  .embla {
+    width: 70.4rem;
+  }
+}
+.embla__slide {
+  /* min-width: 0; */
+  flex: 0 0 100%;
+  /* padding-left: var(--slide-spacing); */
+  position: relative;
+  padding-top: 1.6rem;
+}
+
+.embla__slide::before {
+  content: "";
+  position: absolute;
+  top: 0rem;
+  left: 10%;
+  right: 10%;
+  background-color: #333539;
+  border-radius: 2.4rem;
+  width: 26rem;
+  height: 2.6rem;
+}
+
+.wrapper {
+}
+
+.button {
+  width: 4.8rem;
+  margin: -1.8rem 0;
+  background-color: #444549;
+  position: relative;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button::before,
+.button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #444549;
+}
+
+.button::before {
+  box-shadow: rgba(0, 0, 0, 0.5) -21px 0px 21.6px -10px,
+    rgba(0, 0, 0, 0.5) 21px 0px 21.6px -10px;
+  top: 7%;
+  bottom: 7%;
+}
+
+@media (min-width: 576px) {
+  .wrapper {
+    padding: 4rem 0rem;
+    background-color: #444549;
+    height: 45.9rem;
+    border-radius: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 750px) {
+  .embla__slide {
+    flex: 0 0 60%;
+    /* padding-left: var(--slide-spacing-sm); */
+  }
+}
+
+@media (min-width: 1200px) {
+  .embla__container {
+    margin-left: calc(var(--slide-spacing-lg) * -1);
+    /* width: 131.2rem; */
+  }
+  .embla {
+    width: 107.2rem;
+  }
+  .embla__slide {
+    flex: 0 0 40%;
+    padding-left: 1rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .embla__container {
+    margin-left: calc(var(--slide-spacing-lg) * -1);
+    /* width: 131.2rem; */
+  }
+  .embla {
+    width: 131.2rem;
+  }
+  .embla__slide {
+    flex: 0 0 30%;
+    padding-left: 1rem;
+  }
+}
