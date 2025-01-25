@@ -10,7 +10,6 @@ const COLORS = {
 const SIZES = {
   slideSpacing: "1rem",
   buttonWidth: "3.5rem",
-  borderRadius: "1.8rem",
   dotSize: {
     width: 10,
     height: 10,
@@ -24,39 +23,67 @@ const CSS_VARS = {
 
 export const carouselStyles: MuiStyles = () => ({
   root: {
+    borderRadius: "2.4rem",
     maxWidth: {
       xs: "100%",
-      sm: "42rem",
+      // sm: "100%",
+      md: "70.4rem",
+      lg: "92.8rem",
+      xl: "131rem",
     },
     margin: "auto",
+    padding: {
+      xs: "2rem",
+      // md: "70.4rem",
+      lg: "4rem",
+      xl: "8rem",
+    },
     position: "relative",
-    "--slide-height": CSS_VARS.slideHeight,
-    "--slide-spacing": SIZES.slideSpacing,
-    "--slide-size": CSS_VARS.slideSize,
+    "--slide-height": "19rem",
+    "--slide-spacing": "1rem",
+    "--slide-size": "100%",
+    "--slide-spacing-sm": "1.6rem",
+    "--slide-size-sm": "50%",
+    "--slide-spacing-lg": "2rem",
+    "--slide-size-lg": "calc(100% / 3)",
+    backgroundColor: {
+      xs: "transparent",
+      sm: "#444549",
+    },
   },
 
   viewport: {
     overflow: "hidden",
-    borderRadius: SIZES.borderRadius,
   },
 
   container: {
     display: "flex",
     touchAction: "pan-y pinch-zoom",
-    marginLeft: "calc(var(--slide-spacing) * -1)",
+    marginLeft: {
+      xs: "calc(var(--slide-spacing) * -1)",
+      sm: "calc(var(--slide-spacing-sm) * -1)",
+      lg: "calc(var(--slide-spacing-lg) * -1)",
+    },
     userSelect: "none",
   },
 
   slide: {
-    transform: "translate3d(0, 0, 0)",
-    flex: "0 0 var(--slide-size)",
+    transform: "translate3d(-4%, 0, 0)",
+    flex: {
+      xs: "0 0 var(--slide-size)",
+      sm: "0 0 var(--slide-size-sm)",
+      lg: "0 0 var(--slide-size-lg)",
+    },
+    paddingLeft: {
+      xs: "var(--slide-spacing)",
+      sm: "var(--slide-spacing-sm)",
+      lg: "var(--slide-spacing-lg)",
+    },
     minWidth: 0,
-    paddingLeft: "var(--slide-spacing)",
     position: "relative",
   },
 
   slideImage: {
-    borderRadius: SIZES.borderRadius,
     display: "block",
     height: "var(--slide-height)",
     width: "100%",
@@ -103,7 +130,7 @@ export const carouselStyles: MuiStyles = () => ({
         },
         borderRadius: {
           xs: "0",
-          md: "0 10px 10px 0",
+          md: "0 1rem",
         },
       },
     },
@@ -121,7 +148,7 @@ export const carouselStyles: MuiStyles = () => ({
         },
         borderRadius: {
           xs: "0",
-          md: "10px 0 0 10px",
+          md: "1rem 0",
         },
       },
     },
@@ -146,11 +173,17 @@ export const carouselStyles: MuiStyles = () => ({
 
   dot: {
     minWidth: "unset",
-    width: SIZES.dotSize.width,
-    height: SIZES.dotSize.height,
+    width: {
+      xs: 6,
+      sm: 10,
+    },
+    height: {
+      xs: 6,
+      sm: 10,
+    },
     padding: 0,
     margin: {
-      xs: "0 4px",
+      xs: "0 2px",
       md: "0 6px",
     },
     border: "none",
@@ -179,7 +212,10 @@ export const carouselStyles: MuiStyles = () => ({
     },
 
     "@media (hover: none)": {
-      padding: "12px",
+      padding: {
+        xs: "1rem",
+        sm: "1.2rem",
+      },
       margin: "0",
     },
   },

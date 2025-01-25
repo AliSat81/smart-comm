@@ -246,19 +246,17 @@ export default function Home() {
     <Container
       sx={{
         marginTop: 5,
-        padding: 10,
-        background: "var(--Color-Grey-Grey500, #444549)",
+        padding: {
+          xs: "10rem 2rem",
+          sm: "10rem 1rem",
+          md: "20rem",
+        },
+        background: "black",
+        maxWidth: "100% !important",
       }}
     >
-      <PricingCard
-        price="240,000"
-        duration="3"
-        internetData="120"
-        callMinutes="1700"
-        smsCount="1700"
-      />
       {/* <Typography>{t("title")}</Typography> */}
-      {/* <Carousel options={OPTIONS}>
+      <Carousel options={OPTIONS}>
         <PricingCard
           price="1"
           duration="3"
@@ -301,7 +299,7 @@ export default function Home() {
           callMinutes="1700"
           smsCount="1700"
         />
-      </Carousel> */}
+      </Carousel>
     </Container>
   );
 }
